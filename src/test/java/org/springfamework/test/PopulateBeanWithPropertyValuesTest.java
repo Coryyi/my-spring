@@ -1,5 +1,6 @@
 package org.springfamework.test;
 
+import org.junit.Test;
 import org.springfamework.beans.PropertyValue;
 import org.springfamework.beans.PropertyValues;
 import org.springfamework.beans.factory.config.BeanDefinition;
@@ -10,6 +11,7 @@ import org.springfamework.test.bean.Person;
  * 测试给bean填充属性
  */
 public class PopulateBeanWithPropertyValuesTest {
+    @Test
     public void testPopulateBeanWithPropertyValues() throws Exception{
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         //注册bean 首先构建beanDefinition
@@ -21,11 +23,7 @@ public class PopulateBeanWithPropertyValuesTest {
         beanFactory.registerBeanDefinition("person",beanDefinition);
 
         //获取bean
-
         Person person = (Person) beanFactory.getBean("person");
         System.out.println(person.toString());
     }
-
-
-
 }
